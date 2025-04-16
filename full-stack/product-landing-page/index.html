@@ -8,15 +8,15 @@
   </head>
   <body>
     <header id="header">
-      <div class="cr-brand">Beauty Wedding</div>
       <nav id="nav-bar" class="cr-nav">
+        <div class="cr-brand">Beauty Wedding</div>
         <div class="cr-nav__toggle">
           <button type="button" class="cr-nav__toggle-button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-list">
             <span class="cr-nav__toggle-icon"></span>
           </button>
         </div>
         <ul id="nav-list" class="cr-nav__list cr-nav__list--hidden" aria-label="Navigation list">
-          <li><a class="nav-link" href="#features">Features</a></li>
+          <li><a class="nav-link" href="#why-choose-us">Features</a></li>
           <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
           <li><a class="nav-link" href="#testimony">Testimony</a></li>
         </ul>
@@ -24,30 +24,23 @@
     </header>
     <main>
       <section id="hero" class="cr-hero">
-        <h1>Modern Wedding Invitations</h1>
-        <p>Elegant designs for your special day</p>
-        <form id="form" action="https://www.freecodecamp.org/email-submit" method="post">
+        <h1 class="cr-hero__heading">Modern Wedding Invitations</h1>
+        <p class="cr-hero__subheading">Elegant designs for your special day</p>
+        <form id="form" class="cr-hero__form" action="https://www.freecodecamp.org/email-submit" method="post">
           <label for="email">
-            <span>Email: </span>
+            <span class="sr-only">Email: </span>
             <input type="email" id="email" name="email" placeholder="Enter your email address" />
           </label>
-          <input type="submit" id="submit" value="Get Started" />
+          <input type="submit" id="submit" class="cr-hero__button" value="Get Started" />
         </form>
       </section>
-      <section id="features">
+      <section id="why-choose-us" class="cr-section">
         <h2>Why Choose Us</h2>
         <ul>
           <li>Minimal, elegant designs</li>
           <li>Easy customization—no design skills needed</li>
           <li>Print or digital format options</li>
           <li>Eco-conscious paper choices</li>
-        </ul>
-        <h3>What's Included</h3>
-        <ul>
-          <li>Invitation templates</li>
-          <li>Matching RSVP & Save the Date cards</li>
-          <li>Free digital proofs</li>
-          <li>Optional envelope printing</li>
         </ul>
         <!--<iframe
          width="560" 
@@ -60,7 +53,7 @@
          allowfullscreen>
         </iframe>-->
       </section>
-      <section id="how-it-works">
+      <section id="how-it-works" class="cr-section">
         <h2>How It Works</h2>
         <ul>
           <li>Choose a template</li>
@@ -69,13 +62,19 @@
           <li>Download or order high-quality prints</li>
         </ul>
       </section>
-      <section id="testimony">
+      <section id="testimony" class="cr-section">
         <h2>What Couples Say</h2>
-        <div class="testimonial">
+        <div class="cr-testimonial">
           “Simple, modern, and exactly what we wanted. The whole process took 15 minutes!”<br>&mdash; Lena & James
         </div>
-        <div class="testimonial">
+        <div class="cr-testimonial">
           “We got so many compliments on the design—everyone thought we hired a designer.”<br>&mdash; Aria & Nico
+        </div>
+        <div class="cr-testimonial">
+          “We couldn't believe how easy it was—and it looked professionally designed!”<br>&mdash; Casey & Morgan
+        </div>
+        <div class="cr-testimonial">
+          “The dark mode preview even matched our wedding aesthetic. Loved that.”<br>&mdash; Bri & Alex
         </div>
       </section>
     </main>
