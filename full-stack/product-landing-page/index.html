@@ -8,22 +8,29 @@
   </head>
   <body>
     <header id="header">
-      <nav id="nav-bar">
-        <span>Beauty Wedding</span>
-        <ul>
-          <li><a href="#">Menu 1</a></li>
-          <li><a href="#">Menu 2</a></li>
-          <li><a href="#">Menu 3</a></li>
+      <div class="cr-brand">Beauty Wedding</div>
+      <nav id="nav-bar" class="cr-nav">
+        <div class="cr-nav__toggle">
+          <button type="button" class="cr-nav__toggle-button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-list">
+            <span class="cr-nav__toggle-icon"></span>
+          </button>
+        </div>
+        <ul id="nav-list" class="cr-nav__list cr-nav__list--hidden" aria-label="Navigation list">
+          <li><a class="nav-link" href="#features">Features</a></li>
+          <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+          <li><a class="nav-link" href="#testimony">Testimony</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section id="hero">
+      <section id="hero" class="cr-hero">
         <h1>Modern Wedding Invitations</h1>
         <p>Elegant designs for your special day</p>
         <form id="form" action="https://www.freecodecamp.org/email-submit" method="post">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email address" />
+          <label for="email">
+            <span>Email: </span>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" />
+          </label>
           <input type="submit" id="submit" value="Get Started" />
         </form>
       </section>
@@ -35,13 +42,23 @@
           <li>Print or digital format options</li>
           <li>Eco-conscious paper choices</li>
         </ul>
-        <h2>What's Included</h2>
+        <h3>What's Included</h3>
         <ul>
           <li>Invitation templates</li>
           <li>Matching RSVP & Save the Date cards</li>
           <li>Free digital proofs</li>
           <li>Optional envelope printing</li>
         </ul>
+        <!--<iframe
+         width="560" 
+         height="315" 
+         src="https://www.youtube.com/embed/IBFWlwnrpdU?si=vArpG_HGet71VIY4" 
+         title="YouTube video player" 
+         frameborder="0" 
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+         referrerpolicy="strict-origin-when-cross-origin" 
+         allowfullscreen>
+        </iframe>-->
       </section>
       <section id="how-it-works">
         <h2>How It Works</h2>
@@ -65,5 +82,28 @@
     <footer id="footer">
       &copy; 2025 Beauty Wedding. All rights reserved.
     </footer>
+
+    <!-- Script -->
+    <script>
+      const matchSmallDevices = window.matchMedia("(min-width: 600px)")
+      
+      document.querySelector(".cr-nav__toggle-button").addEventListener("click", function() {
+        document.querySelector(".cr-nav__toggle").classList.toggle("cr-nav__toggle--active");
+        document.querySelector(".cr-nav__list").classList.toggle("cr-nav__list--hidden");
+        document.querySelector(".cr-nav__toggle-button").setAttribute("aria-expanded", !document.querySelector(".cr-nav__list").classList.contains("cr-nav__list--hidden"));
+        document.querySelector(".cr-nav__list").setAttribute("aria-hidden", document.querySelector(".cr-nav__list").classList.contains("cr-nav__list--hidden"));
+      });
+
+      function updateNavMode(x) {
+        document.querySelector(".cr-nav__toggle").classList.toggle("cr-nav__toggle--hidden", x.matches);
+        document.querySelector(".cr-nav__toggle").classList.remove("cr-nav__toggle--active");
+        document.querySelector(".cr-nav__toggle-button").setAttribute("aria-expanded", x.matches);
+        document.querySelector(".cr-nav__list").classList.toggle("cr-nav__list--hidden", !x.matches);
+        document.querySelector(".cr-nav__list").setAttribute("aria-hidden", !x.matches);
+      }
+
+      updateNavMode(matchSmallDevices) // Call listener function at run time
+      matchSmallDevices.addListener(updateNavMode) // Attach listener function on state changes
+    </script>
   </body>
 </html>
