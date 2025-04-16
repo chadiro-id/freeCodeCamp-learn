@@ -45,7 +45,7 @@ header {
 
   display: flex;
   
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   background-color: var(--color-primary);
   color: var(--color-on-primary);
 
@@ -58,6 +58,7 @@ main {
 }
 
 footer {
+  font-size: 0.875rem;
   text-align: center;
   padding-block: 2rem;
 }
@@ -89,7 +90,15 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
 
+.cr-brand__logo {
+  width: 48px;
+  height: 48px;
+}
+
+.cr-brand__name {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -127,6 +136,8 @@ footer {
   outline: none;
   border-radius: 50%;
   border: none;
+
+  cursor: pointer;
 
   &:hover { background-color: transparent }
 }
@@ -244,12 +255,14 @@ footer {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .cr-hero__subheading {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   font-style: italic;
+  text-align: center;
 }
 
 .cr-hero__form {
@@ -289,6 +302,14 @@ footer {
   max-width: 1200px;
   padding: 1rem;
   margin: 0 auto;
+}
+
+.cr-section__video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  overflow-x: auto;
 }
 
 .cr-section h2 {

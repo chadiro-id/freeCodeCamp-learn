@@ -9,7 +9,10 @@
   <body>
     <header id="header">
       <nav id="nav-bar" class="cr-nav">
-        <div class="cr-brand">Beauty Wedding</div>
+        <div class="cr-brand">
+          <img id="header-img" src="" alt="Beauty Wedding Logo" class="cr-brand__logo" />
+          <span class="cr-brand__name">Beauty Wedding</span>
+        </div>
         <div class="cr-nav__toggle">
           <button type="button" class="cr-nav__toggle-button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-list">
             <span class="cr-nav__toggle-icon"></span>
@@ -29,7 +32,7 @@
         <form id="form" class="cr-hero__form" action="https://www.freecodecamp.org/email-submit" method="post">
           <label for="email">
             <span class="sr-only">Email: </span>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" />
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
           </label>
           <input type="submit" id="submit" class="cr-hero__button" value="Get Started" />
         </form>
@@ -42,16 +45,19 @@
           <li>Print or digital format options</li>
           <li>Eco-conscious paper choices</li>
         </ul>
-        <!--<iframe
-         width="560" 
-         height="315" 
-         src="https://www.youtube.com/embed/IBFWlwnrpdU?si=vArpG_HGet71VIY4" 
-         title="YouTube video player" 
-         frameborder="0" 
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-         referrerpolicy="strict-origin-when-cross-origin" 
-         allowfullscreen>
-        </iframe>-->
+        <div class="cr-section__video">
+          <!--<iframe
+           id="video"
+           width="560" 
+           height="315" 
+           src="https://www.youtube.com/embed/IBFWlwnrpdU?si=vArpG_HGet71VIY4" 
+           title="YouTube video player" 
+           frameborder="0" 
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+           referrerpolicy="strict-origin-when-cross-origin" 
+           allowfullscreen>
+          </iframe>-->
+        </div>
       </section>
       <section id="how-it-works" class="cr-section">
         <h2>How It Works</h2>
