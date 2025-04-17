@@ -2,20 +2,62 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Times New Roman", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
 #playing-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .card {
   display: flex;
   justify-content: space-between;
+
+  width: 120px;
+  aspect-ratio: 1/1.4;
+  padding: 8px;
+
+  border: 1px solid black;
+  border-radius: 4px;
+
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.red {
+  color: red;
+}
+.card.black {
+  color: black;
+}
+
+.card-suit.medium {
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+
+.card-suit.large {
+  font-size: 3.5em;
+  line-height: 1.2em;
 }
 
 .left {
   align-self: flex-start;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .middle {
@@ -27,4 +69,13 @@
 
 .right {
   align-self: flex-end;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.upside-down {
+  transform: rotate(180deg);
 }
