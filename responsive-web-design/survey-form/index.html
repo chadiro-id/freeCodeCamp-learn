@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Library Visitor Survey Form</h1>
+    <p id="description">We invite you to fill out this survey to improve library services. Your answers are very valuable to us.</p>
+    <form id="survey-from">
+      <label for="name" id="name-label">Name:</label>
+      <input type="text" id="name" placeholder="Ex: John Doe" required /><br>
+      <label for="email" id="email-label">Email:</label>
+      <input type="email" id="email" placeholder="Ex: email@example.com" required /><br>
+      <label for="number" id="number-label">Age:</label>
+      <input type="number" id="number" placeholder="age" min="10" max="100" />
+      <p>Do you feel comfortable in this library?</p>
+      <p>Do you find it easy to find books?</p>
+      <label for="r-1">Very easy</label>
+      <input type="radio" id="r-1" name="find-book" value="1" />
+      <label for="r-2">Quite easy</label>
+      <input type="radio" id="r-2" name="find-book" value="2" />
+      <label for="r-3">Not easy</label>
+      <input type="radio" id="r-3" name="find-book" value="3" />
+      <p>What needs to be improved in this library?</p>
+      <label for="c-1">Book collections and learning resources</label>
+      <input type="checkbox" id="c-1" name="c-1" value="1" /><br>
+      <label for="c-2">Facilities and comfort</label>
+      <input type="checkbox" id="c-2" name="c-2" value="2" /><br>
+      <label for="c-3">Services and staff</label>
+      <input type="checkbox" id="c-3" name="c-3" value="3" /><br>
+      <label for="c-4">Operating hours</label>
+      <input type="checkbox" id="c-4" name="c-4" value="4" /><br>
+      <label for="c-5">Programs and activities</label>
+      <input type="checkbox" id="c-5" name="c-5" value="5" /><br>
+      <label for="c-6">Technology and internet access</label>
+      <input type="checkbox" id="c-6" name="c-6" value="6" /><br>
+      <p>Please write your suggestions or comments about this library.</p>
+      <textarea placeholder="Enter your suggestion or comment..."></textarea><br>
+      <button type="submit" id="submit">Submit</button>
+    </form>
+  </body>
+</html>

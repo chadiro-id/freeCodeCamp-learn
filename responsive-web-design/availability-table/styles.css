@@ -1,0 +1,134 @@
+:root {
+  --color0: #ffffff;
+  --color1: #bbdefb;
+  --color2: #64b5f6;
+  --color3: #2196f3;
+  --color4: #1976d2;
+  --color5: #0d47a1;
+  --solid-border: 2px solid black;
+  --dashed-border: 1px dashed black;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+span[class~="sr-only"] {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  position: absolute !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+  margin: -1px !important;
+}
+
+.available-0 {
+  background-color: var(--color0);
+}
+
+.available-1 {
+  background-color: var(--color1);
+}
+
+.available-2 {
+  background-color: var(--color2);
+}
+
+.available-3 {
+  background-color: var(--color3);
+}
+
+.available-4 {
+  background-color: var(--color4);
+}
+
+.available-5 {
+  background-color: var(--color5);
+}
+
+#legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+#legend span {
+  text-align: center;
+}
+
+#legend span:first-of-type {
+  flex-basis: 100%;
+}
+
+#legend-gradient {
+  width: 160px;
+  height: 20px;
+  border: 2px solid black;
+  background-image: linear-gradient(
+    90deg, 
+    var(--color0) 0% 16.67%, 
+    var(--color1) 16.67% 33.33%, 
+    var(--color2) 33.33% 50%, 
+    var(--color3) 50% 66.67%, 
+    var(--color4) 66.67% 83.33%, 
+    var(--color5) 83.33% 100%);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+table th {
+  height: 2rem;
+  padding-inline: 0.5rem;
+}
+
+tbody td {
+  min-width: 100px;
+  border-left: var(--solid-border);
+  border-right: var(--solid-border);
+}
+
+tbody tr:first-of-type td {
+  border-top: var(--solid-border);
+}
+
+.sharp td {
+  border-bottom: var(--solid-border);
+}
+
+.half td {
+  border-bottom: var(--dashed-border);
+}
+
+.time {
+  vertical-align: top;
+  white-space: nowrap;
+  text-align: right;
+}

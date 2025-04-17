@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="content">
+      <nav id="navbar">
+        <header><h1>Kotlin Tutorial</h1></header>
+        <ul>
+          <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+          <li><a class="nav-link" href="#Syntax">Syntax</a></li>
+          <li><a class="nav-link" href="#Output">Output</a></li>
+          <li><a class="nav-link" href="#Comments">Comments</a></li>
+          <li><a class="nav-link" href="#Variables">Variables</a></li>
+          <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+          <li><a class="nav-link" href="#Operators">Operators</a></li>
+          <li><a class="nav-link" href="#If...Else">If...Else</a></li>
+          <li><a class="nav-link" href="#Loops">Loops</a></li>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        <section id="Introduction" class="main-section">
+          <header><h2>Introduction</h2></header>
+          <article>
+            <p>Kotlin is a modern programming language developed by JetBrains and first introduced in 2011.</p>
+            <p>Designed to improve developer productivity, Kotlin offers simpler, clearer, 
+                and more expressive syntax compared to Java.</p>
+            <p>Kotlin is fully compatible with Java and can run on the Java Virtual Machine (JVM) platform, 
+                allowing developers to use existing Java code directly.</p>
+          </article>
+        </section>
+        <section id="Syntax" class="main-section">
+          <header><h2>Syntax</h2></header>
+          <article>
+            <p>Let's start with the following code:
+              <pre class="code-snippet"><code>fun main() {
+  println("Hello World")
+}</code></pre>
+            </p>
+            <p>
+              The <code>fun</code> keyword is used to declare a function. 
+              A function is a block of code designed to perform a particular task. 
+              In the example above, it declares the <code>main()</code> function.
+            </p>
+            <p>
+              The <code>main()</code> function is something you will see in every Kotlin program. 
+              This function is used to execute code. 
+              Any code inside the <code>main()</code> function's curly brackets <code>{}</code> will be executed.
+            </p>
+            <p>
+              For example, the <code>println()</code> function is inside the <code>main()</code> function, 
+              meaning that this will be executed. The <code>println()</code> function is used to output/print text, 
+              and in our example it will output "Hello World".
+            </p>
+          </article>
+        </section>
+        <section id="Output" class="main-section">
+          <header><h2>Output</h2></header>
+          <article>
+            <p>The println() function is used to output values/print text.<br>
+              You can add as many println() functions as you want. Note that it will add a new line for each function:
+              <pre class="code-snippet"><code>fun main() {
+  println("Hello World 1")
+  println("Hello World 2")
+  println("Hello World 3")
+}</code></pre>
+            </p>
+            <p>You can also print numbers, and perform mathematical calculations:
+              <pre class="code-snippet"><code>fun main() {
+  println(5 + 5) // 10
+}</code></pre></p>
+            <p>There is also a print() function, which is similar to println(). 
+              The only difference is that it does not insert a new line at the end of the output:
+              <pre class="code-snippet"><code>fun main() {
+  print("Hello World! ")
+  print("Kotlin is Awesome, ")
+  print("I am learning Kotlin ")
+}</code></pre>
+            </p>
+          </article>
+        </section>
+        <section id="Comments" class="main-section">
+          <header><h2>Comments</h2></header>
+          <article>
+            <p>Comments can be used to explain Kotlin code, and to make it more readable. 
+              It can also be used to prevent execution when testing alternative code.</p>
+            <p>There are two types of comments in Kotlin:</p>
+            <h3>Single-line comments</h3>
+            <p>Single-line comments start with two forward slashes <code>//</code>. 
+              Everything after the <code>//</code> will be ignored by the compiler:
+              <pre class="code-snippet"><code>fun main() {
+  // This is a single-line comment
+  println("Hello World") // This is also a single-line comment
+}</code></pre>
+            </p>
+            <h3>Multi-line comments</h3>
+            <p>Multi-line comments start with <code>/*</code> and end with <code>*/</code>. 
+              Everything between the <code>/*</code> and <code>*/</code> will be ignored by the compiler:
+              <pre class="code-snippet"><code>fun main() {
+  /* This is a multi-line comment
+  It can be used to write long comments
+  that span multiple lines */
+  println("Hello World")
+}</code></pre>
+          </article>
+        </section>
+        <section id="Variables" class="main-section">
+          <header><h2>Variables</h2></header>
+          <article>
+            <p>Variables are used to store data. 
+              In Kotlin, you can declare a variable using the <code>var</code> or <code>val</code> keywords.</p>
+            <h3>var</h3>
+            <p>The <code>var</code> keyword is used to declare a mutable variable (a variable that can be changed):
+              <pre class="code-snippet"><code>fun main() {
+  var name = "John Doe" // Mutable variable
+  println(name) // Output: John Doe
+  name = "Jane Doe" // Change the value of the variable
+  println(name) // Output: Jane Doe
+}</code></pre>
+            </p>
+            <h3>val</h3>
+            <p>The <code>val</code> keyword is used to declare an immutable variable (a variable that cannot be changed):
+              <pre class="code-snippet"><code>fun main() {
+  val name = "John Doe" // Immutable variable
+  println(name) // Output: John Doe
+  // name = "Jane Doe" // This will cause an error, since the variable is immutable
+}</code></pre>
+            </p>
+            <p>Note that you can also declare a variable without assigning a value to it. 
+              In this case, you need to specify the type of the variable:
+              <pre class="code-snippet"><code>fun main() {
+  var name: String // Declare a variable without assigning a value
+  name = "John Doe" // Assign a value to the variable
+  println(name) // Output: John Doe
+}</code></pre>
+            </p>
+            <p>You can also declare a variable with a specific type, and assign a value to it:
+              <pre class="code-snippet"><code>fun main() {
+  var name: String = "John Doe" // Declare a variable with a specific type and assign a value to it
+  println(name) // Output: John Doe
+}</code></pre>
+            </p>
+            <p>In Kotlin, you can also declare a variable using the <code>typealias</code> keyword. 
+              This allows you to create an alias for a type, which can make your code more readable:
+              <pre class="code-snippet"><code>typealias Name = String // Create an alias for the String type
+fun main() {
+  var name: Name = "John Doe" // Use the alias to declare a variable
+  println(name) // Output: John Doe
+}</code></pre>
+            </p>
+            <p>In Kotlin, you can also declare a variable using the <code>lateinit</code> keyword. 
+              This allows you to declare a variable without assigning a value to it, and then assign a value to it later:
+              <pre class="code-snippet"><code>lateinit var name: String // Declare a variable without assigning a value
+fun main() {
+  name = "John Doe" // Assign a value to the variable
+  println(name) // Output: John Doe
+}</code></pre>
+            </p>
+            <p>Note that you can only use the <code>lateinit</code> keyword with mutable variables (<code>var</code>), 
+              and not with immutable variables (<code>val</code>).</p>
+          </article>
+        </section>
+        <section id="Data_Types" class="main-section">
+          <header><h2>Data Types</h2></header>
+          <article>
+            <p>In Kotlin, the <em>type</em> of a variable is decided by its value:
+              <pre class="code-snippet"><code>var x = 100 // x is an Int
+var y = 100.5 // y is a Double
+var z = "Hello World" // z is a String</code></pre>
+            </p>
+            <p>However, it is possible to specify the type if you want:
+              <pre class="code-snippet"><code>var x: Int = 100 // x is an Int
+var y: Double = 100.5 // y is a Double
+var z: String = "Hello World" // z is a String</code></pre>
+            </p>
+            <p>Data types are divided into different groups:
+              <ul>
+                <li>Numbers</li>
+                <li>Character</li>
+                <li>Boolean</li>
+                <li>String</li>
+                <li>Array</li>
+                <li>List</li>
+                <li>Set</li>
+                <li>Map</li>
+              </ul>
+            </p>
+            <h3>Numbers</h3>
+            <p>Numbers are used to store numeric values. 
+              In Kotlin, there are two types of numbers: integers and floating-point numbers.
+              <ul>
+                <li><code>Int</code>: 32-bit signed integer</li>
+                <li><code>Long</code>: 64-bit signed integer</li>
+                <li><code>Short</code>: 16-bit signed integer</li>
+                <li><code>Byte</code>: 8-bit signed integer</li>
+                <li><code>Float</code>: 32-bit floating-point number</li>
+                <li><code>Double</code>: 64-bit floating-point number</li>
+              </ul>
+            </p>
+            <h4>Integer Types</h4>
+            <p>Integer types are used to store whole numbers (numbers without decimal points).</p>
+            <h5>Int</h5>
+            <p>The Int data type can store whole numbers from -2147483648 to 2147483647:
+              <pre class="code-snippet"><code>var x: Int = 100 // x is an Int</code></pre></p>
+            <h5>Long</h5>
+            <p>The Long data type can store whole numbers from -9223372036854775808 to 9223372036854775807:
+              <pre class="code-snippet"><code>var x: Long = 100L // x is a Long</code></pre></p>
+            <h5>Short</h5>
+            <p>The Short data type can store whole numbers from -32768 to 32767:
+              <pre class="code-snippet"><code>var x: Short = 100 // x is a Short</code></pre></p>
+            <h5>Byte</h5>
+            <p>The Byte data type can store whole numbers from -128 to 127:
+              <pre class="code-snippet"><code>var x: Byte = 100 // x is a Byte</code></pre></p>
+            <h4>Floating-point Types</h4>
+            <p>Floating-point types are used to store numbers with decimal points.</p>
+            <h5>Float</h5>
+            <p>The Float data type can store numbers with decimal points from -3.40282347E+38 to 3.40282347E+38:
+              <pre class="code-snippet"><code>var x: Float = 100.5F // x is a Float</code></pre></p>
+            <h5>Double</h5>
+            <p>The Double data type can store numbers with decimal points from -1.7976931348623157E+308 to 1.7976931348623157E+308:
+              <pre class="code-snippet"><code>var x: Double = 100.5 // x is a Double</code></pre></p>
+            <h3>Character</h3>
+            <p>The Char data type is used to store a single character. 
+              It can store any character from the Unicode character set:
+              <pre class="code-snippet"><code>var x: Char = 'A' // x is a Char</code></pre></p>
+            <h3>Boolean</h3>
+            <p>The Boolean data type is used to store true or false values:
+              <pre class="code-snippet"><code>var x: Boolean = true // x is a Boolean</code></pre></p>
+            <h3>String</h3>
+            <p>The String data type is used to store a sequence of characters. 
+              It can store any text, including letters, numbers, and symbols:
+              <pre class="code-snippet"><code>var x: String = "Hello World" // x is a String</code></pre></p>
+            <h3>Array</h3>
+            <p>The Array data type is used to store a collection of values of the same type. 
+              It can store any type of data, including numbers, characters, and strings:
+              <pre class="code-snippet"><code>var x: Array<Int> = arrayOf(1, 2, 3, 4, 5) // x is an Array of Int</code></pre></p>
+            <h3>List</h3>
+            <p>The List data type is used to store a collection of values of the same type. 
+              It can store any type of data, including numbers, characters, and strings:
+              <pre class="code-snippet"><code>var x: List<Int> = listOf(1, 2, 3, 4, 5) // x is a List of Int</code></pre></p>
+            <h3>Set</h3>
+            <p>The Set data type is used to store a collection of unique values of the same type. 
+              It can store any type of data, including numbers, characters, and strings:
+              <pre class="code-snippet"><code>var x: Set<Int> = setOf(1, 2, 3, 4, 5) // x is a Set of Int</code></pre></p>
+            <h3>Map</h3>
+            <p>The Map data type is used to store a collection of key-value pairs. 
+              It can store any type of data, including numbers, characters, and strings:
+              <pre class="code-snippet"><code>var x: Map<String, Int> = mapOf("John" to 1, "Jane" to 2, "Joe" to 3) // x is a Map of String to Int</code></pre></p>
+          </article>
+        </section>
+        <section id="Operators" class="main-section">
+          <header><h2>Operators</h2></header>
+          <article>
+            <p>Operators are used to perform operations on variables and values.<br>
+              The value is called an operand, while the operation (to be performed between the two operands) is defined by an operator.<br>
+              In the example below, the numbers 100 and 50 are operands, and the + sign is an operator:
+              <pre class="code-snippet"><code>var x = 100 + 50  // The + sign is an operator</code></pre>
+            </p>
+            <p>Although the + operator is often used to add together two values, 
+              like in the example above, it can also be used to add together a variable and a value, or a variable and a variable:
+              <pre class="code-snippet"><code>var x = 100 + 50  // 150
+var y = x + 50    // 200 (150 + 50)
+var z = x + y     // 350 (150 + 200)</code></pre>
+            </p>
+            <p>Kotlin divides the operators into the following groups:
+              <ul>
+                <li>Arithmetic Operators</li>
+                <li>Assignment Operators</li>
+                <li>Comparison Operators</li>
+                <li>Logical Operators</li>
+                <li>Bitwise Operators</li>
+              </ul>
+            </p>
+            <h3>Arithmetic Operators</h3>
+            <p>Arithmetic operators are used to perform common mathematical operations.</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>+</td>
+                    <td>Addition</td>
+                    <td>Adds two operands</td>
+                    <td><code class="no-wrap">var x = 100 + 50</code></td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td>-</td>
+                    <td>Subtraction</td>
+                    <td>Subtracts two operands</td>
+                    <td><code class="no-wrap">var x = 100 - 50</code></td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>*</td>
+                    <td>Multiplication</td>
+                    <td>Multiplies two operands</td>
+                    <td><code class="no-wrap">var x = 100 * 50</code></td>
+                    <td>5000</td>
+                  </tr>
+                  <tr>
+                    <td>/</td>
+                    <td>Division</td>
+                    <td>Divides two operands</td>
+                    <td><code class="no-wrap">var x = 100 / 50</code></td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>%</td>
+                    <td>Modulus</td>
+                    <td>Returns the remainder of two operands</td>
+                    <td><code class="no-wrap">var x = 100 % 50</code></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>++</td>
+                    <td>Increment</td>
+                    <td>Increases the value by 1</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code>++x</code></td>
+                    <td>101</td>
+                  </tr>
+                  <tr>
+                    <td>--</td>
+                    <td>Decrement</td>
+                    <td>Decreases the value by 1</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code>--x</code></td>
+                    <td>99</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Note that the increment and decrement operators can be used in two ways:
+              <ul>
+                <li>Prefix: <code>++x</code> or <code>--x</code></li>
+                <li>Postfix: <code>x++</code> or <code>x--</code></li>
+              </ul>
+              The prefix operator increases or decreases the value before it is used in the expression, while the postfix operator increases or decreases the value after it is used in the expression.
+              <pre class="code-snippet"><code>var x = 100
+println(++x) // Output: 101 (prefix increment)
+println(x++) // Output: 101 (postfix increment)
+println(x)   // Output: 102 (x is now 102)
+println(--x) // Output: 101 (prefix decrement)
+println(x--) // Output: 101 (postfix decrement)
+println(x)   // Output: 100 (x is now 100)</code></pre>
+            </p>
+            <p>Increment and decrement operators can also be used with other data types, such as <code>Char</code>, <code>Byte</code>, and <code>Short</code>:
+              <pre class="code-snippet"><code>var x: Char = 'A'
+println(++x) // Output: B (prefix increment)
+println(x++) // Output: B (postfix increment)
+println(x)   // Output: C (x is now C)
+println(--x) // Output: B (prefix decrement)
+println(x--) // Output: B (postfix decrement)
+println(x)   // Output: A (x is now A)</code></pre>
+            </p>
+            <p>Increment and decrement on <code>Boolean</code>, <code>String</code>, and <code>Array</code>:
+              <pre class="code-snippet"><code>var x: Boolean = true
+println(++x) // Output: true (prefix increment)
+println(x++) // Output: true (postfix increment)
+println(x)   // Output: true (x is still true)
+println(--x) // Output: false (prefix decrement)
+println(x--) // Output: false (postfix decrement)
+println(x)   // Output: false (x is now false)</code></pre>
+            </p>
+            <p>Increment and decrement on <code>Map</code>, <code>Set</code>, and <code>List</code>:
+              <pre class="code-snippet"><code>var x: Map<String, Int> = mapOf("John" to 1, "Jane" to 2, "Joe" to 3)
+println(++x) // Output: {John=1, Jane=2, Joe=3} (prefix increment)
+println(x++) // Output: {John=1, Jane=2, Joe=3} (postfix increment)
+println(x)   // Output: {John=1, Jane=2, Joe=3} (x is still {John=1, Jane=2, Joe=3})
+println(--x) // Output: {John=1, Jane=2, Joe=3} (prefix decrement)
+println(x--) // Output: {John=1, Jane=2, Joe=3} (postfix decrement)
+println(x)   // Output: {John=1, Jane=2, Joe=3} (x is still {John=1, Jane=2, Joe=3})</code></pre>
+            </p>
+            <h3>Assignment Operators</h3>
+            <p>Assignment operators are used to assign values to variables.</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>=</td>
+                    <td>Assignment</td>
+                    <td>Assigns the right operand to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code></td>
+                    <td>100</td>
+                  </tr>
+                  <tr>
+                    <td>+=</td>
+                    <td>Add and Assign</td>
+                    <td>Adds the right operand to the left operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x += 50</code></td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td>-=</td>
+                    <td>Subtract and Assign</td>
+                    <td>Subtracts the right operand from the left operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x -= 50</code></td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>*=</td>
+                    <td>Multiply and Assign</td>
+                    <td>Multiplies the left operand by the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x *= 50</code></td>
+                    <td>5000</td>
+                  </tr>
+                  <tr>
+                    <td>/=</td>
+                    <td>Divide and Assign</td>
+                    <td>Divides the left operand by the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x /= 50</code></td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>%=</td>
+                    <td>Modulus and Assign</td>
+                    <td>Returns the remainder of the left operand divided by the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x %= 50</code></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>&lt;&lt;=</td>
+                    <td>Left Shift and Assign</td>
+                    <td>Left shifts the left operand by the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x &lt;&lt;= 2</code></td>
+                    <td>400</td>
+                  </tr>
+                  <tr>
+                    <td>&gt;&gt;=</td>
+                    <td>Right Shift and Assign</td>
+                    <td>Right shifts the left operand by the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x &gt;&gt;= 2</code></td>
+                    <td>25</td>
+                  </tr>
+                  <tr>
+                    <td>&gt;&gt;&gt;=</td>
+                    <td>Unsigned Right Shift and Assign</td>
+                    <td>Unsigned right shifts the left operand by the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x &gt;&gt;&gt;= 2</code></td>
+                    <td>25</td>
+                  </tr>
+                  <tr>
+                    <td>&amp;=</td>
+                    <td>Bitwise AND and Assign</td>
+                    <td>Performs a bitwise AND operation on the left operand and the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x &amp;= 50</code></td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>|=</td>
+                    <td>Bitwise OR and Assign</td>
+                    <td>Performs a bitwise OR operation on the left operand and the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x |= 50</code></td>
+                    <td>150</td>
+                  </tr>
+                  <tr>
+                    <td>^=</td>
+                    <td>Bitwise XOR and Assign</td>
+                    <td>Performs a bitwise XOR operation on the left operand and the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x ^= 50</code></td>
+                    <td>50</td>
+                  </tr>
+                  <tr>
+                    <td>!!=</td>
+                    <td>Not Equal and Assign</td>
+                    <td>Checks if the left operand is not equal to the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x !!= 50</code></td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>===</td>
+                    <td>Identical and Assign</td>
+                    <td>Checks if the left operand is identical to the right operand and assigns the result to the left operand</td>
+                    <td><code class="no-wrap">var x = 100</code><br><code class="no-wrap">x === 50</code></td>
+                    <td>false</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h3>Comparison Operators</h3>
+            <p>Comparison operators are used to compare two values.</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>==</td>
+                    <td>Equal</td>
+                    <td>Checks if the left operand is equal to the right operand</td>
+                    <td><code class="no-wrap">var x = 100 == 50</code></td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>!=</td>
+                    <td>Not Equal</td>
+                    <td>Checks if the left operand is not equal to the right operand</td>
+                    <td><code class="no-wrap">var x = 100 != 50</code></td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>&gt;</td>
+                    <td>Greater Than</td>
+                    <td>Checks if the left operand is greater than the right operand</td>
+                    <td><code class="no-wrap">var x = 100 &gt; 50</code></td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>&lt;</td>
+                    <td>Less Than</td>
+                    <td>Checks if the left operand is less than the right operand</td>
+                    <td><code class="no-wrap">var x = 100 &lt; 50</code></td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>&gt;=</td>
+                    <td>Greater Than or Equal</td>
+                    <td>Checks if the left operand is greater than or equal to the right operand</td>
+                    <td><code class="no-wrap">var x = 100 &gt;= 50</code></td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>&lt;=</td>
+                    <td>Less Than or Equal</td>
+                    <td>Checks if the left operand is less than or equal to the right operand</td>
+                    <td><code class="no-wrap">var x = 100 &lt;= 50</code></td>
+                    <td>false</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h3>Logical Operators</h3>
+            <p>Logical operators are used to perform logical operations on boolean values.</p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>&amp;&amp;</td>
+                    <td>Logical AND</td>
+                    <td>Returns true if both operands are true</td>
+                    <td><code class="no-wrap">var x = true &amp;&amp; false</code></td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>||</td>
+                    <td>Logical OR</td>
+                    <td>Returns true if either operand is true</td>
+                    <td><code class="no-wrap">var x = true || false</code></td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>!</td>
+                    <td>Logical NOT</td>
+                    <td>Returns true if the operand is false, and false if the operand is true</td>
+                    <td><code class="no-wrap">var x = !true</code></td>
+                    <td>false</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+        <section id="If...Else" class="main-section">
+          <header><h2>If...Else</h2></header>
+          <article>
+            <p>Kotlin has the following conditionals:
+              <ul>
+                <li>Use <code>if</code> to specify a block of code to be executed, if a specified condition is true</li>
+                <li>Use <code>else</code> to specify a block of code to be executed, if the same condition is false</li>
+                <li>Use <code>else if</code> to specify a new condition to test, if the first condition is false</li>
+                <li>Use <code>when</code> to specify many alternative blocks of code to be executed</li>
+              </ul>
+            </p>
+            <h3>Kotlin If statement</h3>
+            <p>
+              The <code>if</code> statement is used to specify a block of code to be executed, if a specified condition is true.
+              It is the most common conditional statement in Kotlin.
+              <pre class="code-snippet"><code>var x = 100
+if (x &gt; 50) { // If x is greater than 50
+  println("x is greater than 50") // Output: x is greater than 50
+} // No else statement</code></pre>
+            </p>
+            <h3>Kotlin If with Else statement</h3>
+            <p>
+              The condition is evaluated, and if it is true, the block of code is executed. If it is false, the block of code is skipped.
+              <pre class="code-snippet"><code>var x = 100
+if (x &gt; 50) { // If x is greater than 50
+  println("x is greater than 50") // Output: x is greater than 50
+} else { // If x is not greater than 50
+  println("x is not greater than 50") // Output: x is not greater than 50
+}</code></pre>
+            </p>
+            <h3>Kotlin If with Else If statement</h3>
+            <p>
+              The <code>else if</code> statement is used to specify a new condition to test, if the first condition is false.
+              It is used to test multiple conditions in a single <code>if</code> statement.
+              <pre class="code-snippet"><code>var x = 100
+if (x &gt; 50) { // If x is greater than 50
+  println("x is greater than 50") // Output: x is greater than 50
+} else if (x &lt; 50) { // If x is less than 50
+  println("x is less than 50") // Output: x is less than 50
+} else { // If x is equal to 50
+  println("x is equal to 50") // Output: x is equal to 50
+}</code></pre>
+            </p>
+            <h3>Kotlin When statement</h3>
+            <p>
+              The <code>when</code> statement is a replacement for the switch statement in other programming languages.
+              It is used to specify many alternative blocks of code to be executed.
+              <pre class="code-snippet"><code>var x = 100
+when (x) { // When x is equal to 100
+  100 -> println("x is equal to 100") // Output: x is equal to 100
+  50 -> println("x is equal to 50") // Output: x is equal to 50
+  0 -> println("x is equal to 0") // Output: x is equal to 0
+}</code></pre>
+            </p>
+          </article>
+        </section>
+        <section id="Loops" class="main-section">
+          <header><h2>Loops</h2></header>
+          <article>
+            <p>Loops can execute a block of code as long as a specified condition is reached.<br>
+              Loops are handy because they save time, reduce errors, and they make code more readable.</p>
+            <h3>While Loop</h3>
+            <p>The <code>while</code> loop is used to execute a block of code as long as a specified condition is true.
+              The condition is evaluated before the block of code is executed.
+              <pre class="code-snippet"><code>var x = 0
+while (x &lt; 5) { // While x is less than 5
+  println(x) // Output: 0 1 2 3 4
+  x++ // Increment x by 1
+}</code></pre>
+           </p>
+           <h3>Do While Loop</h3>
+            <p>The <code>do while</code> loop is used to execute a block of code as long as a specified condition is true.
+                The condition is evaluated after the block of code is executed.
+                <pre class="code-snippet"><code>var x = 0
+do { // Do while x is less than 5
+  println(x) // Output: 0 1 2 3 4
+  x++ // Increment x by 1
+} while (x &lt; 5)</code></pre>
+            </p>
+            <h3>For Loop</h3>
+            <p>The <code>for</code> loop is used to execute a block of code a specified number of times.
+              It is used to iterate over a range of values or a collection of values.
+              <pre class="code-snippet"><code>for (x in 0..5) { // For x in the range 0 to 5
+  println(x) // Output: 0 1 2 3 4 5
+}</code></pre>
+            </p>
+            <p>The <code>for</code> loop can also be used to iterate over a collection of values, such as an array or a list:
+              <pre class="code-snippet"><code>var x = arrayOf(1, 2, 3, 4, 5)
+for (i in x) { // For i in the array x
+  println(i) // Output: 1 2 3 4 5
+}</code></pre>
+            </p>
+            <p>The <code>for</code> loop can also be used to iterate over a map, using the <code>entries</code> property:
+              <pre class="code-snippet"><code>var x = mapOf("John" to 1, "Jane" to 2, "Joe" to 3)
+for ((key, value) in x) { // For (key, value) in the map x
+  println("$key = $value") // Output: John = 1 Jane = 2 Joe = 3
+}</code></pre>
+            </p>
+            <h3>Break and Continue</h3>
+            <p>
+              The <code>break</code> statement is used to exit a loop, while the <code>continue</code> statement is used to skip the current iteration of a loop and continue with the next iteration.
+              <pre class="code-snippet"><code>for (x in 0..5) { // For x in the range 0 to 5
+  if (x == 3) { // If x is equal to 3
+    break // Exit the loop
+  }
+}</code></pre>
+              <pre class="code-snippet"><code>for (x in 0..5) { // For x in the range 0 to 5
+  if (x == 3) { // If x is equal to 3
+    continue // Skip the current iteration
+  }
+}</code></pre>
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
