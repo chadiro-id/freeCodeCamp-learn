@@ -4,10 +4,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7j3z1l2e5c5e5b5e5b5e5b5e5b5e5b5b5" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
-      <nav id="navbar"></nav>
+      <nav id="navbar" class="cr-navbar">
+        <div class="cr-navbar__container">
+          <div class="cr-brand">
+            <img class="cr-brand__logo" src="https://via.placeholder.com/150" alt="Logo">
+          </div>
+          <div class="cr-nav-menu">
+            <button type="button" class="cr-nav-menu__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-list">
+              <span class="cr-nav-menu__toggle-icon"></span>
+            </button>
+            <ul id="nav-list" class="cr-nav-menu__list">
+              <li class="cr-nav-menu__item"><a href="#welcome-section">Welcome</a></li>
+              <li class="cr-nav-menu__item"><a href="#project-section">Projects</a></li>
+              <li class="cr-nav-menu__item"><a href="#contact-section">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
+    <main>
+      <section id="welcome-section" class="cr-section">
+        <h1>Welcome to My Personal Portfolio</h1>
+        <p>This is a brief introduction about myself.</p>
+      </section>
+      <section id="project-section" class="cr-section"></section>
+      <section id="contact-section" class="cr-section">
+        <h2>Contact Me</h2>
+        <p>If you would like to get in touch, please reach out via email.</p>
+      </section>
+    </main>
+    <footer></footer>
   </body>
 </html>
