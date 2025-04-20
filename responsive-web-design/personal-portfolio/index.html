@@ -4,40 +4,166 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7j3z1l2e5c5e5b5e5b5e5b5e5b5e5b5b5" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+     crossorigin="anonymous"
+     referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header>
+    <header class="cr-header">
       <nav id="navbar" class="cr-navbar">
-        <div class="cr-navbar__container">
+        <div class="cr-navbar__content-container">
           <div class="cr-brand">
-            <img class="cr-brand__logo" src="https://via.placeholder.com/150" alt="Logo">
+            <img class="cr-brand__logo" src="./assets/img/logo.png" alt="Logo">
           </div>
           <div class="cr-nav-menu">
-            <button type="button" class="cr-nav-menu__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-list">
-              <span class="cr-nav-menu__toggle-icon"></span>
+            <button type="button" class="cr-nav-menu__toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-content">
+              <span class="cr-nav-menu__toggle-inner"></span>
             </button>
-            <ul id="nav-list" class="cr-nav-menu__list">
-              <li class="cr-nav-menu__item"><a href="#welcome-section">Welcome</a></li>
-              <li class="cr-nav-menu__item"><a href="#project-section">Projects</a></li>
-              <li class="cr-nav-menu__item"><a href="#contact-section">Contact</a></li>
-            </ul>
+            <div id="nav-content" class="cr-nav-menu__content cr-nav-menu__content--hidden" aria-hidden="true">
+              <div class="cr-menu">
+                <ul class="cr-menu__list">
+                  <li class="cr-menu__item"><a href="#welcome-section" class="cr-menu__link">Home</a></li>
+                  <li class="cr-menu__item"><a href="#project-section" class="cr-menu__link">Projects</a></li>
+                  <li class="cr-menu__item"><a href="#contact-section" class="cr-menu__link">Contact</a></li>
+                </ul>
+                <div class="cr-menu__group">
+                  <!--<button id="btn-theme" type="button" class="cr-menu__button" aria-label="Toggle Theme" aria-pressed="false" aria-controls="ic-theme-light ic-theme-dark">
+                    <span id="ic-theme-light" class="cr-menu__button-inner">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="24px" height="24px">
+                        <path fill="currentColor" d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/>
+                      </svg>
+                    </span>
+                    <span id="ic-theme-dark">
+                      <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px">
+                        <rect fill="none" height="24" width="24"/>
+                        <path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                      </svg>
+                    </span>
+                  </button>-->
+                  <button type="button" class="theme-toggle cr-menu__button" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+                    <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                      <mask class="moon" id="moon-mask">
+                        <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                        <circle cx="24" cy="10" r="6" fill="black" />
+                      </mask>
+                      <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                      <g class="sun-beams" stroke="currentColor">
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
     </header>
-    <main>
-      <section id="welcome-section" class="cr-section">
-        <h1>Welcome to My Personal Portfolio</h1>
-        <p>This is a brief introduction about myself.</p>
+    <main class="cr-main">
+      <section id="welcome-section" class="cr-main__section">
+        <div class="cr-content-wrapper">
+          <h1>Welcome to My Personal Portfolio</h1>
+          <p>This is a brief introduction about myself.</p>
+        </div>
       </section>
-      <section id="project-section" class="cr-section"></section>
-      <section id="contact-section" class="cr-section">
-        <h2>Contact Me</h2>
-        <p>If you would like to get in touch, please reach out via email.</p>
+      <section id="project-section" class="cr-main__section">
+        <div class="cr-content-wrapper">
+          <h2>My Projects</h2>
+          <p>Here are some of the projects I have worked on.</p>
+        </div>
+      </section>
+      <section id="contact-section" class="cr-main__section">
+        <div class="cr-content-wrapper">
+          <h2>Contact Me</h2>
+          <p>If you would like to get in touch, please reach out via email.</p>
+        </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="cr-footer">
+      <div class="cr-footer__content-container">
+        <hr class="cr-footer__divider">
+        <div class="cr-footer__copyright">
+          <span>Designed &amp; created by <b>Chadiro</b></span>
+          <span>&#169; 2025 freeCodeCamp</span>
+        </div>
+      </div>
+    </footer>
   </body>
+  <!-- Script -->
+  <script>
+    const matchNavBreakpoint = window.matchMedia("(min-width: 768px)")
+    
+    document.querySelector(".cr-nav-menu__toggle").addEventListener("click", function() {
+      document.querySelector(".cr-nav-menu__toggle").classList.toggle("cr-nav-menu__toggle--active");
+      document.querySelector(".cr-nav-menu__content").classList.toggle("cr-nav-menu__content--hidden");
+      document.querySelector(".cr-nav-menu__toggle").setAttribute("aria-expanded", !document.querySelector(".cr-nav-menu__content").classList.contains("cr-nav-menu__content--hidden"));
+      document.querySelector(".cr-nav-menu__content").setAttribute("aria-hidden", document.querySelector(".cr-nav-menu__content").classList.contains("cr-nav-menu__content--hidden"));
+    });
+
+    function updateNavMode(x) {
+      document.querySelector(".cr-nav-menu__toggle").classList.toggle("cr-nav-menu__toggle--hidden", x.matches);
+      document.querySelector(".cr-nav-menu__toggle").classList.remove("cr-nav-menu__toggle--active");
+      document.querySelector(".cr-nav-menu__toggle").setAttribute("aria-expanded", x.matches);
+      document.querySelector(".cr-nav-menu__content").classList.toggle("cr-nav-menu__content--hidden", !x.matches);
+      document.querySelector(".cr-nav-menu__content").setAttribute("aria-hidden", !x.matches);
+    }
+
+    updateNavMode(matchNavBreakpoint) // Call listener function at run time
+    matchNavBreakpoint.addListener(updateNavMode) // Attach listener function on state changes
+  </script>
+  <script>
+    const storageKey = 'theme-preference';
+    const onClick = () => {
+      // flip current value
+      theme.value = theme.value === 'light'? 'dark' : 'light';
+      setPreference()
+    };
+    const getColorPreference = () => {
+      if (localStorage.getItem(storageKey)) {
+        return localStorage.getItem(storageKey)
+      }
+      else {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    };
+    const setPreference = () => {
+      localStorage.setItem(storageKey, theme.value);
+      reflectPreference();
+    };
+    const reflectPreference = () => {
+      document.firstElementChild.setAttribute('data-theme', theme.value);
+      document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
+    };
+    const theme = {
+      value: getColorPreference(),
+    };
+    
+    // set early so no page flashes / CSS is made aware
+    reflectPreference();
+    window.onload = () => {
+      // set on load so screen readers can see latest value on the button
+      reflectPreference();
+      // now this script can find and listen for clicks on the control
+      document.querySelector('#theme-toggle').addEventListener('click', onClick);
+    }
+    
+    // sync with system changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({matches:isDark}) => {
+      theme.value = isDark ? 'dark' : 'light';
+      setPreference()
+    });
+  </script>
 </html>
