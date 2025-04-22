@@ -141,6 +141,8 @@
     const reflectPreference = () => {
       document.firstElementChild.setAttribute('data-theme', theme.value);
       document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
+      document.querySelector('.cr-brand__logo').src = theme.value === 'dark' ? './assets/img/logo-on-dark.png' : './assets/img/logo-on-light.png';
+      document.querySelector('.cr-brand__logo').alt = theme.value === 'dark' ? 'Logo on dark' : 'Logo on light';
     };
     const theme = {
       value: getColorPreference(),
