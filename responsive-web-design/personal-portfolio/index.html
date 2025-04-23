@@ -12,6 +12,11 @@
      crossorigin="anonymous"
      referrerpolicy="no-referrer">
 
+    <!-- Google Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -66,7 +71,7 @@
       </nav>
     </header>
     <main class="cr-main">
-      <section id="welcome-section" class="cr-main__section">
+      <section id="welcome-section" class="cr-section">
         <div class="cr-content-wrapper">
           <div class="cr-welcome">
             <span class="cr-welcome__greetings">Hello, my name is</span>
@@ -89,9 +94,9 @@
           </div>
         </div>
       </section>
-      <section id="about-section" class="cr-main__section">
+      <section id="about-section" class="cr-section">
         <div class="cr-content-wrapper">
-          <h2 class="cr-section-heading">About Me</h2>
+          <h2 class="cr-section__heading">About Me</h2>
           <p class="cr-about__description">
             I am passionate about technology and always eager to learn new things.<br>
             I have a strong interest in web development and programming, and I am currently honing my skills in these areas.<br>
@@ -112,21 +117,44 @@
           </p>
         </div>
       </section>
-      <section id="project-section" class="cr-main__section">
+      <section id="project-section" class="cr-section">
         <div class="cr-content-wrapper">
-          <h2 class="cr-section-heading">My Projects</h2>
+          <h2 class="cr-section__heading">My Projects</h2>
           <div class="cr-project">
-            <div class="cr-project__item project-tile"></div>
+            <a class="cr-project__item project-tile" href="https://chadiro-id.github.io/availability-table/" target="_blank" rel="noopener">
+              <img class="cr-project__item-image" src="./assets/img/ss-availability-table.png" alt="availability table." />
+              <div class="cr-project__item-description">
+                Availability Table
+              </div>
+            </a>
+            <a class="cr-project__item project-tile" href="https://chadiro-id.github.io/book-inventory/" target="_blank" rel="noopener">
+              <img class="cr-project__item-image" src="./assets/img/ss-book-inventory.png" alt="book inventory." />
+              <div class="cr-project__item-description">
+                Book Inventory
+              </div>
+            </a>
+            <a class="cr-project__item project-tile" href="https://chadiro-id.github.io/moon-orbit/" target="_blank" rel="noopener">
+              <img class="cr-project__item-image" src="./assets/img/ss-moon-orbit.png" alt="moon orbit." />
+              <div class="cr-project__item-description">
+                Moon Orbit
+              </div>
+            </a>
+            <a class="cr-project__item project-tile" href="https://chadiro-id.github.io/product-landing-page/" target="_blank" rel="noopener">
+              <img class="cr-project__item-image" src="./assets/img/ss-product-landing-page.png" alt="product landing page." />
+              <div class="cr-project__item-description">
+                Product Landing Page
+              </div>
+            </a>
           </div>
         </div>
       </section>
-      <section id="contact-section" class="cr-main__section">
+      <section id="contact-section" class="cr-section">
         <div class="cr-content-wrapper">
-          <h2 class="cr-section-heading">Get in Touch</h2>
+          <h2 class="cr-section__heading cr-section__heading--center">Get in Touch</h2>
           <div class="cr-contact">
-            <p class="cr-contact__descriptions">
-              Even though I am currently still in the basic learning stage and do not yet have sufficient knowledge, 
-              I am open to sharing or just saying hello.
+            <p class="cr-contact__description">
+              Even though I am currently still in the basic learning stage and do not yet have sufficient knowledge,<br>
+              I am open to any opportunities and collaborations that can help me grow and learn more.<br>
             </p>
             <div class="cr-contact__item">
               <!-- This email address is just an example, if there are any similarities, it is unintentional. -->
