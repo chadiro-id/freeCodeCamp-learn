@@ -24,7 +24,7 @@
           <div class="cr-nav-menu">
             <button type="button" class="cr-nav-menu__toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-content">
               <!--<span class="cr-nav-menu__toggle-inner"></span>-->
-              <svg id="toggle-menu__icon" class="ic-menu" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+              <svg id="toggle-menu__icon" class="ic-toggle-menu" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
                 <line x1="6" y1="2" x2="22" y2="2" stroke="currentColor" />
                 <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" />
                 <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" />
@@ -34,13 +34,13 @@
             <div id="nav-content" class="cr-nav-menu__content cr-nav-menu__content--hidden" aria-hidden="true">
               <div class="cr-menu">
                 <ul class="cr-menu__list">
-                  <li class="cr-menu__item"><a href="#welcome-section" class="cr-menu__link">Home</a></li>
+                  <li class="cr-menu__item"><a href="#about-section" class="cr-menu__link">About Me</a></li>
                   <li class="cr-menu__item"><a href="#project-section" class="cr-menu__link">Projects</a></li>
                   <li class="cr-menu__item"><a href="#contact-section" class="cr-menu__link">Contact</a></li>
                 </ul>
                 <div class="cr-menu__group">
                   <button type="button" class="theme-toggle cr-menu__button" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
-                    <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                    <svg class="ic-toggle-theme" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
                       <mask class="moon" id="moon-mask">
                         <rect x="0" y="0" width="100%" height="100%" fill="white" />
                         <circle cx="24" cy="10" r="6" fill="black" />
@@ -68,8 +68,34 @@
     <main class="cr-main">
       <section id="welcome-section" class="cr-main__section">
         <div class="cr-content-wrapper">
-          <h1>Welcome to My Personal Portfolio</h1>
-          <p>This is a brief introduction about myself.</p>
+          <div class="cr-welcome">
+            <span class="cr-welcome__greetings">Hello,</span>
+            <h1 class="cr-welcome__heading">I am Chadiro.</h1>
+            <p class="cr-welcome__short-description">
+              A programming enthusiast.
+            </p>
+  
+            <p class="cr-welcome__description">
+              I am passionate about technology and always eager to learn new things.<br>
+              Currently I'm learning the basics of programming and web development.<br>
+              I want to become a reliable web developer and create useful applications for everyone.<br>
+            </p>
+  
+            <button id="welcome__action-button"
+              class="cr-welcome__action-button"
+              type="button">
+              See more about me
+              <span class="cr-arrow-right">&#129122;</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="about-section" class="cr-main__section">
+        <div class="cr-content-wrapper">
+          <h2 class="cr-section-heading">About Me</h2>
+          <p class="cr-about__description">
+            I am passionate about technology and always eager to learn new things.
+          </p>
         </div>
       </section>
       <section id="project-section" class="cr-main__section">
@@ -80,8 +106,33 @@
       </section>
       <section id="contact-section" class="cr-main__section">
         <div class="cr-content-wrapper">
-          <h2>Contact Me</h2>
-          <p>If you would like to get in touch, please reach out via email.</p>
+          <h2 class="cr-section-heading">Get in Touch</h2>
+          <div class="cr-contact">
+            <p class="cr-contact__descriptions">
+              Even though I am currently still in the basic learning stage and do not yet have sufficient knowledge, 
+              I am open to sharing or just saying hello.
+            </p>
+            <div class="cr-contact__item">
+              <!-- This email address is just an example, if there are any similarities, it is unintentional. -->
+              Email: 
+              <a class="cr-link" href="mailto:myemail@gmail.com">
+                myemail@gmail.com
+              </a>
+            </div>
+            <div class="cr-contact__item">
+              <!-- This phone number is just an example, if there are any similarities, it is unintentional. -->
+              Telp: 
+              <a class="cr-link" href="tel:628111111111">
+                +62 811-1111-111
+              </a>
+            </div>
+            <ul class="cr-contact__social">
+              <li><a href="https://fb.me/chadiro.id" class="cr-contact__social-link" target="_blank" rel="noopener" aria-label="Find us on Facebook"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://instagram.com/chadiro.id" class="cr-contact__social-link" target="_blank" rel="noopener" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://youtube.com/@ChadiroID" class="cr-contact__social-link" target="_blank" rel="noopener" aria-label="Follow us on YouTube"><i class="fab fa-youtube"></i></a></li>
+              <li><a href="https://github.com/chadiro-id" class="cr-contact__social-link" target="_blank" rel="noopener" aria-label="Follow us on Github"><i class="fab fa-github"></i></a></li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
@@ -110,7 +161,7 @@
     function updateNavMode(x) {
       document.querySelector(".cr-nav-menu__toggle").classList.toggle("cr-nav-menu__toggle--hidden", x.matches);
       document.querySelector(".cr-nav-menu__toggle").classList.remove("cr-nav-menu__toggle--active");
-      document.querySelector(".ic-menu").classList.remove("ic-menu--close");
+      document.querySelector(".ic-toggle-menu").classList.remove("ic-toggle-menu--close");
       document.querySelector(".cr-nav-menu__toggle").setAttribute("aria-expanded", x.matches);
       document.querySelector(".cr-nav-menu__content").classList.toggle("cr-nav-menu__content--hidden", !x.matches);
       document.querySelector(".cr-nav-menu__content").setAttribute("aria-hidden", !x.matches);
