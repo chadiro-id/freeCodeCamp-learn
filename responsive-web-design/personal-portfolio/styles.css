@@ -98,78 +98,77 @@ span[class~="sr-only"] {
   margin: -1px !important;
 }
 
-.ic-menu {
+.ic-toggle-menu {
   stroke-width: 2px;
   stroke-linecap: round;
   transform-origin: center;
   transition: all .3s var(--cr-ease-elastic-out-3);
 }
 
-.ic-menu > line {
+.ic-toggle-menu > line {
   transform-origin: center;
   transition: all .3s var(--cr-ease-elastic-out-3);
 }
 
-.ic-menu--close {
+.ic-toggle-menu--close {
   transform: rotate(225deg);
 }
 
-.ic-menu--close > line:first-of-type {
+.ic-toggle-menu--close > line:first-of-type {
   opacity: 0;
   transform: translateY(10px);
 }
 
-.ic-menu--close > line:last-of-type {
+.ic-toggle-menu--close > line:last-of-type {
   opacity: 0;
   transform: translateY(-10px);
 }
 
-.ic-menu--close > line:nth-of-type(2) {
+.ic-toggle-menu--close > line:nth-of-type(2) {
   transform: rotate(-90deg);
 }
 
-.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+.ic-toggle-theme > :is(.moon, .sun, .sun-beams) {
   transform-origin: center;
 }
 
-.sun-moon > .sun {
+.ic-toggle-theme > .sun {
   transition: transform .5s var(--cr-ease-elastic-out-3);
 }
 
-.sun-and-moon > .sun-beams {
-  /*stroke: var(--color-on-surface); */
+.ic-toggle-theme > .sun-beams {
   stroke-width: 2px;
   transition: transform .5s var(--cr-ease-elastic-out-4), opacity .5s var(--cr-ease-3);
 }
 
-.sun-and-moon .moon > circle {
+.ic-toggle-theme .moon > circle {
   transition: transform .25s var(--cr-ease-out-5);
 }
 
-[data-theme="dark"] .sun-and-moon > .sun {
+[data-theme="dark"] .ic-toggle-theme > .sun {
   transform: scale(1.75);
   transition-timing-function: var(--cr-ease-3);
   transition-duration: .25s;
 }
 
-[data-theme="dark"] .sun-and-moon > .sun-beams {
+[data-theme="dark"] .ic-toggle-theme > .sun-beams {
   opacity: 0;
   transition-duration: .15s;
   transform: rotateZ(-25deg);
 }
 
-[data-theme="dark"] .sun-and-moon > .moon > circle {
+[data-theme="dark"] .ic-toggle-theme > .moon > circle {
   transform: translateX(-7px);
   transition-duration: .5s;
   transition-delay: .25s;
 }
 
 @supports (cx: 1) {
-  .sun-and-moon .moon > circle {
+  .ic-toggle-theme .moon > circle {
     transition: cx .25s var(--cr-ease-out-5);
   }
 
-  [data-theme="dark"] .sun-and-moon > .moon > circle {
+  [data-theme="dark"] .ic-toggle-theme > .moon > circle {
     cx: 17;
     transform: translateX(0);
   }
@@ -200,8 +199,11 @@ span[class~="sr-only"] {
   display: flex;
   flex-direction: column;
 
-  font-size: var(--dimen-text-xs);
+  font-size: var(--dimen-text-sm);
   text-align: center;
+
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .cr-navbar {
@@ -470,8 +472,13 @@ span[class~="sr-only"] {
   stroke-linecap: round;
 }
 
+.cr-main__section {
+  padding: 1em 0;
+}
+
 .cr-main__section:first-of-type {
   margin-top: 64px;
+  min-height: calc(100vh - 64px);
 }
 
 @media screen and (min-width: 768px) {
