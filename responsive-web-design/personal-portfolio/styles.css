@@ -175,9 +175,14 @@ span[class~="sr-only"] {
 }
 
 .cr-navbar__content-container,
-.cr-footer__content-container,
-.cr-content-wrapper {
+.cr-footer__content-container {
   max-width: var(--dimen-width-wrapper);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cr-content-wrapper {
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
 }
@@ -205,6 +210,7 @@ span[class~="sr-only"] {
 
   padding-top: 0.5rem;
   padding-bottom: 1rem;
+  padding-inline: 12px;
 }
 
 .cr-navbar {
@@ -715,9 +721,6 @@ span[class~="sr-only"] {
 @media screen and (min-width: 1200px) {
   .cr-section {
     padding-inline: 4rem;
-  }
-  .cr-footer__content-container {
-    padding-inline: 12px;
   }
 }
 
