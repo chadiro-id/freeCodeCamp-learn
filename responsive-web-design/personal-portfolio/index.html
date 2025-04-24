@@ -191,6 +191,23 @@
     </footer>
     <!-- Script -->
     <script>
+      document.getElementById("welcome__action-button").onclick = function() {
+        document.getElementById("about-section").scrollIntoView();
+      };
+      document.querySelectorAll(".cr-menu__link").forEach(link => {
+        link.addEventListener("click", function(evt) {
+          if (document.querySelector(".cr-nav-menu__toggle").classList.contains("cr-nav-menu__toggle--active")) {
+            document.querySelector(".cr-nav-menu__toggle").classList.remove("cr-nav-menu__toggle--active");
+            document.querySelector(".ic-toggle-menu").classList.remove("ic-toggle-menu--close");
+            document.querySelector(".cr-nav-menu__content").classList.add("cr-nav-menu__content--hidden");
+            document.querySelector(".cr-nav-menu__toggle").setAttribute("aria-expanded", false);
+            document.querySelector(".cr-nav-menu__content").setAttribute("aria-hidden", true);
+          }
+          evt.stopPropagation();
+        });
+      });
+    </script>
+    <script>
       const matchNavBreakpoint = window.matchMedia("(min-width: 768px)")
       
       document.querySelector(".cr-nav-menu__toggle").addEventListener("click", function() {
