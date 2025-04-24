@@ -719,8 +719,8 @@ span[class~="sr-only"] {
 }
 
 @media screen and (min-width: 1200px) {
-  .cr-section {
-    padding-inline: 4rem;
+  .cr-footer__copyright {
+    padding-inline: 0;
   }
 }
 
