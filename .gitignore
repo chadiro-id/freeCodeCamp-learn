@@ -1,2 +1,4 @@
 # Ignore the sandbox directory
 sandbox/
+
+node_modules/
