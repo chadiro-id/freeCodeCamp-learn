@@ -10,8 +10,12 @@ galleryItems.forEach(ele => {
   });
 });
 
-btnClose.addEventListener("click", () => {
-  hideLightbox();
+btnClose.addEventListener("click", hideLightbox);
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    hideLightbox();
+  }
 });
 
 function showLightbox(src) {
