@@ -36,25 +36,24 @@ headCouchElement.innerText = footballTeam.headCoach;
 teamElement.innerText = footballTeam.team;
 yearElement.innerText = footballTeam.year;
 
-playersDropdown.addEventListener("input", () => {
+playersDropdown.addEventListener("change", () => {
   console.log(playersDropdown.value);
-  renderPlayerCards(playersDropdown.value)
+  renderPlayerCards();
 });
 
-function renderPlayerCards(playerPosition) {
+function renderPlayerCards() {
+  const playerPosition = playersDropdown.value;
   let players;
   if (playerPosition === "all") {
-    players = footballTeam.players;
+    players = [...footballTeam.players];
   } else {
     players = footballTeam.players.filter(({ position }) => position === playerPosition);
   }
-  console.log(players);
   let mappedPlayer = players.map((player) => {
-    return `<div class="player-card"><h2>${player.name}</h2><p>Position: ${player.position}</p></div>`;
+    const captain = player.isCaptain ? "(Captain) " : "";
+    return `<div class="player-card"><h2>${captain}${player.name}</h2><p>Position: ${player.position}</p></div>`;
   });
-  console.log(mappedPlayer.join(""));
   playerCardsElement.innerHTML = mappedPlayer.join("");
-  console.log(playerCardsElement.innerHTML);
 }
 
-renderPlayerCards("all");
+renderPlayerCards();
