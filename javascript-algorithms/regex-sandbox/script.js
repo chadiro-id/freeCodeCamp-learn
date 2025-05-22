@@ -22,30 +22,23 @@ testButton.addEventListener('click', () => {
   const regex = new RegExp(regexPattern.value, getFlags());
   const testText = stringToTest.innerHTML;
   const matchFound = regex.test(testText);
+  let replacedText = '';
+  console.log(regex);
   if (matchFound) {
-    let textMatched = '';
+    const matched = testText.match(regex);
+    console.log(matched);
     if (globalFlag.checked) {
-      // If the global flag is set, find all matches
-      const matched = testText.matchAll(regex);
-      console.log(matched);
-      for (const match of matched) {
-        textMatched += `${match[0]}, `;
-        // Highlight the matched text
-        const highlightedText = `<span class="highlight">${match[0]}</span>`;
-        testText.replace(match[0], highlightedText);
-      }
+      replacedText = testText.replaceAll(regex, (match) => {
+        return `<span class="highlight">${match}</span>`
+      });
+      testResult.textContent = matched.join(', ');
     } else {
-      // If the global flag is not set, find the first match
-      const matched = testText.match(regex);
-      if (matched) {
-        textMatched = matched[0];
-        // Highlight the matched text
-        const highlightedText = `<span class="highlight">${matched[0]}</span>`;
-        testText.replace(matched[0], highlightedText);
-      }
+      console.log(testText);
+      replacedText = testText.replace(regex, `<span class="highlight">${matched[0]}</span>`);
+      console.log(testText);
+      testResult.textContent = matched[0];
     }
-    stringToTest.innerHTML = testText;
-    testResult.textContent = textMatched;
+    stringToTest.innerHTML = replacedText;
   } else {
     testResult.textContent = 'no match';
   }
