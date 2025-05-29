@@ -1,7 +1,6 @@
 
 const currentDate = new Date();
 const currentDateFormat = `Current Date and Time: ${currentDate}`;
-console.log(currentDateFormat);
 
 function formatDateMMDDYYYY(date) {
   const formattedDate = date.toLocaleDateString("en-US");
