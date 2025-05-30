@@ -13,7 +13,7 @@ function formatDateLong(date) {
     day: 'numeric',
     month: 'long',
     year: 'numeric'
-  })
+  });
   return `Formatted Date (Month Day, Year): ${formattedDate}`
 }
 console.log(formatDateLong(currentDate));
